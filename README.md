@@ -12,4 +12,12 @@
 
 ### Dropzone file added
 
+### firebase app setup ->
+    firestorage database
+    storage
+    register app in setting and get the code
+
+### firebase installation
+    create firebase.ts
+    addded upload file logic
 

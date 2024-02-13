@@ -8,4 +8,8 @@
 
 ### home page build
 
+### Dropzone library install
+
+### Dropzone file added
+
 

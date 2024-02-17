@@ -12,6 +12,8 @@ import {
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import DropzoneComponent from "react-dropzone";
+import toast from "react-hot-toast";
+
 
 function Dropzone() {
   const [loading, setLoading] = useState(false);
@@ -21,8 +23,8 @@ function Dropzone() {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
 
-      reader.onabort = () => console.log("file reading was aborted");
-      reader.onerror = () => console.log("file reading has failed");
+      reader.onabort = () => toast.error("File reading was aborted");
+      reader.onerror = () => toast.error("File reading has failed");
       reader.onload = async () => await uploadPost(file);
       reader.readAsArrayBuffer(file);
     });
@@ -33,6 +35,7 @@ function Dropzone() {
     if (!user) return;
 
     setLoading(true);
+    const toastId = toast.loading("Uploading File...");
 
     // / addDoc -> users/12345ersu/files;
     const docRef = await addDoc(collection(db, "users", user.id, "files"), {
@@ -53,6 +56,11 @@ function Dropzone() {
       await updateDoc(doc(db, "users", user.id, "files", docRef.id), {
         downloadURL: downloadURL,
       });
+    });
+    
+    toast.success("File Uploaded!", {
+      id: toastId,
+      position: "bottom-center",
     });
 
     setLoading(false);

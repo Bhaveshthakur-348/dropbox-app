@@ -31,9 +31,9 @@ function DeleteModal() {
     if (!user || !fileId) return;
 
     const toastId = toast.loading("Deleting File...", {
-        position: "bottom-center"
+      position: "bottom-center",
     });
-    
+
     const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
 
     try {
@@ -43,7 +43,7 @@ function DeleteModal() {
           deleteDoc(doc(db, "users", user.id, "files", fileId)).then(() => {
             toast.success("Deleted Successfully", {
               id: toastId,
-              position: "bottom-center"
+              position: "bottom-center",
             });
           });
         })
@@ -53,7 +53,7 @@ function DeleteModal() {
     } catch (error) {
       toast.error(`Error: ${error}`, {
         id: toastId,
-        position: "bottom-center"
+        position: "bottom-center",
       });
       setIsDeleteModalOpen(false);
     }
@@ -79,7 +79,7 @@ function DeleteModal() {
         <DialogFooter className="flex space-x-2 py-3">
           <Button
             size="sm"
-            className="px-3 flex-1"
+            className="px-5 py-2 flex-1"
             variant={"ghost"}
             onClick={() => setIsDeleteModalOpen(false)}
           >
@@ -90,7 +90,7 @@ function DeleteModal() {
           <Button
             type="submit"
             size="sm"
-            className="px-3 flex-1"
+            className="px-5 py-2 flex-1"
             variant={"destructive"}
             onClick={() => deleteFile()}
           >

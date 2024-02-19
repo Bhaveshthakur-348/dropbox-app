@@ -74,7 +74,7 @@ function RenameModal() {
         <DialogFooter className="flex space-x-2 py-3">
           <Button
             size="sm"
-            className="px-3 flex-1"
+            className="px-5 py-2flex-1"
             variant={"ghost"}
             onClick={() => setIsRenameModalOpen(false)}
           >
@@ -85,7 +85,7 @@ function RenameModal() {
           <Button
             type="submit"
             size="sm"
-            className="px-3 flex-1"
+            className="px-5 py-2 flex-1"
             onClick={() => renameFile()}
           >
             <span className="sr-only">Apply changes</span>

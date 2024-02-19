@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold">
             Welcome to Dropbox. <br />
             <br />
-            Storing everything for you and your business needs. All inone place
+            Storing everything for you and your business needs. All in one place
           </h1>
 
           <p className="pb-20">
@@ -47,7 +47,7 @@ export default function Home() {
         This video is made for informational and educational purposes only. We
         do not own or affiliate with Dropbox or/and any of its subsidiaries in
         any form. Copyright Disclaimer under section 107 of the Copyright Act
-        1976, allowance is made for "fair use"of this video for education
+        1976, allowance is made for fair use of this video for education
         purposes.
       </p>
     </main>
